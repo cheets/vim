@@ -23,6 +23,16 @@ set foldenable                  " auto fold code
 set gdefault                    " the /g flag on :s substitutions by default
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" Syntastic end
 
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.conf set filetype=Apache
